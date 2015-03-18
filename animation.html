@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		padding-bottom: 100px;
+	}
+	.test{
+		width: 500px;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 8px;
+		color:green;
+		font-weight: bold;
+		text-indent: 20px;
+		background-color: pink;
+	}
+	.test1{
+		-webkit-animation:mymove linear 2s;
+		        animation:mymove linear 2s;
+	}
+	.test2{
+		-webkit-animation:mymove ease 2s;
+		        animation:mymove ease 2s;
+	}
+	.test3{
+		-webkit-animation:mymove ease-in 2s;
+		        animation:mymove ease-in 2s;
+	}
+	.test4{
+		-webkit-animation:mymove ease-out 2s;
+		        animation:mymove ease-out 2s;
+	}
+	.test5{
+		-webkit-animation:mymove ease-in-out 2s;
+		        animation:mymove ease-in-out 2s;
+	}
+	.test6{
+		-webkit-animation:mymove cubic-bezier(0,0,1,1) 2s;
+		        animation:mymove cubic-bezier(0,0,1,1) 2s;
+	}
+	.test7{
+		color: #fff;
+		background-color: red;
+		-webkit-animation:mymove steps(5) 2s;
+		        animation:mymove steps(5) 2s;
+	}
+	.test8{
+		color: #fff;
+		background-color: green;
+		-webkit-animation:mymove steps(2) 4s;
+		        animation:mymove steps(2) 4s;
+	}
+	.test9{
+		color: #fff;
+		background-color: green;
+		-webkit-animation:mymove1 steps(2) 4s;
+		        animation:mymove1 steps(2) 4s;
+	} 
+	.test10{
+		color: #fff;
+		background-color: blue;
+		-webkit-animation:mymove1 steps(2,start) 6s;
+		        animation:mymove1 steps(2,start) 6s;
+	}
+	.test11{
+		color: #fff;
+		background-color: blue;
+		-webkit-animation:mymove1 steps(2,end) 6s;
+		        animation:mymove1 steps(2,end) 6s;
+	}
+	.test{
+		-webkit-animation-fill-mode:forwards;
+		        animation-fill-mode:forwards;
+	} 
+	@-webkit-keyframes mymove
+	{
+		from {width:500px;}
+		to {width:800px;}
+	}
+	@keyframes mymove
+	{
+		from {width:500px;}
+		to {width:800px;}
+	}
+	@-webkit-keyframes mymove1
+	{
+		0%{width:500px;}
+		20%{width:600px;}
+		40%{width:700px;}
+		60%{width:750px;}
+		100%{width:800px;}
+	}
+	@keyframes mymove1
+	{
+		0%{width:500px;}
+		20%{width:600px;}
+		40%{width:700px;}
+		60%{width:750px;}
+		100%{width:800px;}
+	}
+	.title{
+		display: block;
+		margin-top: 45px;
+		margin-bottom: 10px;
+		font-size: 20px;
+		font-family: '微软雅黑';
+		font-weight: bolder;
+		text-indent: 1em;
+		text-decoration: none;
+		color: #000;
+	}
+	</style>
+</head>
+<body>
+	<a id="a" class="title">平滑过渡模式</a>
+	<div class="test test1">animation:mymove linear 1s;</div>
+	<div class="test test2">animation:mymove ease 1s;</div>
+	<div class="test test3">animation:mymove ease-in 1s;</div>
+	<div class="test test4">animation:mymove ease-out 1s;</div>
+	<div class="test test5">animation:mymove ease-in-out 1s;</div>
+	<div class="test test6">animation:mymove scubic-bezier(0,0,1,1) 1s;</div>
+	<a id="b" class="title">分步过渡模式</a>
+	<div class="test test7">animation:mymove steps(5) 2s;</div>
+	<a id="c" class="title">steps(n)</a>
+	<div class="test test8">animation:mymove steps(2) 4s;</div>
+	<div class="test test9">animation:mymove steps(2) 4s;</div>
+	<a id="d" class="title">steps(n,start)&&steps(n,end)</a>
+	<div class="test test10">animation:mymove steps(2,start) 6s;</div>
+	<div class="test test11">animation:mymove steps(2,end) 6s;</div>
+	
+</body>
+</html>
