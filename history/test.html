@@ -29,7 +29,6 @@
 	
 	
 </div>
-<script src="jquery.js"></script>
 <script>
 
 	window.addEventListener("popstate", function() {
@@ -55,25 +54,12 @@
 	
 	function ajax1(){
 		console.log("发起第一个ajax请求");
-		$.ajax({
-	           type  : "GET",
-	            url  : "ajax1.js",
-	       dataType  : "json",
-	        success  : function(data){
-	        	document.getElementById("ajaxCon").innerHTML = data.txt;
-	        }
-	    });
+		document.getElementById("ajaxCon").innerHTML = "发起第一个ajax请求,这是第一个请求回来的数据";  
+	    
 	}
 	function ajax2(){
 		console.log("发起第二个ajax请求");
-		$.ajax({
-	           type  : "GET",
-	            url  : "ajax2.js",
-	       dataType  : "json",
-	        success  : function(data){
-	        	document.getElementById("ajaxCon").innerHTML = data.txt;
-	        }
-	    });
+	    document.getElementById("ajaxCon").innerHTML = "发起第二个ajax请求,这是第二个请求回来的数据";   
 	}
 	
 	
