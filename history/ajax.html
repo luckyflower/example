@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	
+	#ajaxCon{
+		width: 222px; 
+		height: 120px; 
+		padding-top: 80px;
+		margin-top: 7px; 
+		margin-left: 2px; 
+		color: #ffffff; 
+		background-color: #D75331; 
+		text-align: center;
+	}
+	
+</style>
+</head>
+
+<body>
+<button id="pushState1">第一个ajax请求</button>
+
+<button id="pushState2">第二个ajax请求</button>
+
+<div id="ajaxCon">
+	ajax请求回来的内容。
+	
+	
+</div>
+<script src="jquery.js"></script>
+<script>
+
+	window.addEventListener("popstate", function() {
+				
+		var query = location.href.split("?")[1];
+	
+		if(location.href.split("?")[1] == "1"){
+			ajax1();
+		}else if(location.href.split("?")[1] == "2"){
+			ajax2();
+		}
+		
+	});
+	document.getElementById("pushState1").onclick = function(){
+		history.pushState("", "", location.href.split("?")[0] + "?" + 1);
+		ajax1();
+		
+	}
+	document.getElementById("pushState2").onclick = function(){
+		history.pushState("", "", location.href.split("?")[0] + "?" + 2);
+		ajax2();
+	}
+	
+	function ajax1(){
+		console.log("发起第一个ajax请求");
+		$.ajax({
+	           type  : "GET",
+	            url  : "ajax1.js",
+	       dataType  : "json",
+	        success  : function(data){
+	        	document.getElementById("ajaxCon").innerHTML = data.txt;
+	        }
+	    });
+	}
+	function ajax2(){
+		console.log("发起第二个ajax请求");
+		$.ajax({
+	           type  : "GET",
+	            url  : "ajax2.js",
+	       dataType  : "json",
+	        success  : function(data){
+	        	document.getElementById("ajaxCon").innerHTML = data.txt;
+	        }
+	    });
+	}
+	
+	
+</script>
+
+
+</body>
+</html>
