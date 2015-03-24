@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	
+	#ajaxCon{
+		width: 222px; 
+		height: 120px; 
+		padding-top: 80px;
+		margin-top: 7px; 
+		margin-left: 2px; 
+		color: #ffffff; 
+		background-color: #D75331; 
+		text-align: center;
+	}
+	
+</style>
+</head>
+
+<body>
+<button id="pushState1">第一个ajax请求</button>
+
+<button id="pushState2">第二个ajax请求</button>
+
+<div id="ajaxCon">
+	ajax请求回来的内容。
+	
+	
+</div>
+<script>
+
+	document.getElementById("pushState1").onclick = function(){
+		ajax1();
+	}
+	document.getElementById("pushState2").onclick = function(){
+		ajax2();
+	}
+	
+	function ajax1(){
+		console.log("发起第一个ajax请求");
+		document.getElementById("ajaxCon").innerHTML = "发起第一个ajax请求,这是第一个请求回来的数据";  
+	    
+	}
+	function ajax2(){
+		console.log("发起第二个ajax请求");
+	    document.getElementById("ajaxCon").innerHTML = "发起第二个ajax请求,这是第二个请求回来的数据";   
+	}
+	
+	
+</script>
+
+
+</body>
+</html>
